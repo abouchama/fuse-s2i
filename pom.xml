@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.example.fis</groupId>
-  <artifactId>fis2-spring-boot-camel-xml</artifactId>
+  <artifactId>fuse-s2i</artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <name>Fabric8 :: Quickstarts :: Spring-Boot :: Camel XML</name>
