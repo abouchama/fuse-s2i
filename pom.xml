@@ -24,6 +24,24 @@
     <maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
   </properties>
 
+  <repositories>
+    <repository>
+      <id>my-repo1</id>
+      <name>Maven Central</name>
+      <url>https://repo1.maven.org/maven2</url>
+    </repository>
+    <repository>
+      <id>my-repo2</id>
+      <name>Red Hat GA repository</name>
+      <url>https://maven.repository.redhat.com/ga</url>
+    </repository>
+    <repository>
+      <id>my-repo3</id>
+      <name>Red Hat EA repository</name>
+      <url>https://maven.repository.redhat.com/earlyaccess/all</url>
+    </repository>
+  </repositories>
+  
   <dependencyManagement>
     <dependencies>
       <dependency>
