@@ -6,4 +6,5 @@ HTTP_PROXY=http://dummy.com
 HTTPS_PROXY=http://dummy.com
 NO_PROXY=*.google.com\|*.redhat.com
 no_proxy=*.google.com\|*.redhat.com
-#JAVA_MAIN_CLASS=ch.vorburger.openshift.s2i.example.Server
+
+#JAVA_MAIN_CLASS=TestPing
