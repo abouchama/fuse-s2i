@@ -7,4 +7,4 @@ HTTPS_PROXY=http://dummy.com
 NO_PROXY=*.google.com\|*.redhat.com
 no_proxy=*.google.com\|*.redhat.com
 
-#JAVA_MAIN_CLASS=TestPing
+JAVA_MAIN_CLASS=TestPing
