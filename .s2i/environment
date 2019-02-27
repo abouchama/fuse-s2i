@@ -3,8 +3,8 @@
 # see https://github.com/fabric8io-images/s2i/tree/master/java/images/jboss
 
 HTTP_PROXY=http://abel_env_s2i.com
-HTTPS_PROXY=http://dummy.com
-NO_PROXY=*.google.com\|*.redhat.com
-no_proxy=*.google.com\|*.redhat.com
+HTTPS_PROXY=http://abel_env_s2i.com
+#NO_PROXY=*.google.com\|*.redhat.com
+#no_proxy=*.google.com\|*.redhat.com
 
 JAVA_MAIN_CLASS=TestPing
