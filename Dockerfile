@@ -1,5 +1,6 @@
 FROM fis-java-openshift:2.0
 ENV JAVA_APP_DIR=/deployments
+ENV JAVA_MAIN_CLASS=TestPing
 ENV HTTP_PROXY=http://dummy.com
 ENV HTTPS_PROXY=http://dummy.com
 ENV NO_PROXY=*.google.com\|*.redhat.com
