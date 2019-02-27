@@ -2,9 +2,9 @@
 # it's just for illustration.  For all the optional available here,
 # see https://github.com/fabric8io-images/s2i/tree/master/java/images/jboss
 
-#HTTP_PROXY=http://dummy.com
-#HTTPS_PROXY=http://dummy.com
-#NO_PROXY=*.google.com\|*.redhat.com
-#no_proxy=*.google.com\|*.redhat.com
+HTTP_PROXY=http://dummy.com
+HTTPS_PROXY=http://dummy.com
+NO_PROXY=*.google.com\|*.redhat.com
+no_proxy=*.google.com\|*.redhat.com
 
 JAVA_MAIN_CLASS=TestPing
