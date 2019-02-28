@@ -2,9 +2,11 @@
 # it's just for illustration.  For all the optional available here,
 # see https://github.com/fabric8io-images/s2i/tree/master/java/images/jboss
 
-HTTP_PROXY=http://abel_env_s2i.com
-HTTPS_PROXY=http://abel_env_s2i.com
+#HTTP_PROXY=http://abel_env_s2i.com
+#HTTPS_PROXY=http://abel_env_s2i.com
 #NO_PROXY=*.google.com\|*.redhat.com
 #no_proxy=*.google.com\|*.redhat.com
+
+JAVA_OPTIONS=-Dhttp.nonProxyHosts=*.google.com|*.redhat.com -Dhttps.proxyHost=deployment-yml.com -Dhttp.proxyHost=deployment-yml.com
 
 JAVA_MAIN_CLASS=TestPing
