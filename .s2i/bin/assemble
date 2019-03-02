@@ -10,18 +10,18 @@ echo '************************************************************************'
 
 SRCRUNJAVA=/tmp/src/run-java
 
- if [ -d ${SRCRUNJAVA} ]; then
-  echo " .... Copying RUN JAVA SHELL file from project ..."
-  sudo cp -p -v ${SRCRUNJAVA}/* /opt/run-java/
-fi
+# if [ -d ${SRCRUNJAVA} ]; then
+#  echo " .... Copying RUN JAVA SHELL file from project ..."
+#  sudo cp -p -v ${SRCRUNJAVA}/* /opt/run-java/
+#fi
 
 ##########################################
 # Pramod Padmanabhan ppadmana@redhat.com #
 #####Added as breakfix for proxy issue####
 ##########################################
-#sed -i '584,584 s/^/#/' /opt/run-java/run-java.sh
-#sed -i '584irun_fuse=`echo exec $(exec_args) java $(java_options) -cp "$(classpath)" ${args} $@`' /opt/run-java/run-java.sh
-#sed -i '585i eval "$run_fuse"' /opt/run-java/run-java.sh
+sed -i '584,584 s/^/#/' /opt/run-java/run-java.sh
+sed -i '584irun_fuse=`echo exec $(exec_args) java $(java_options) -cp "$(classpath)" ${args} $@`' /opt/run-java/run-java.sh
+sed -i '585i eval "$run_fuse"' /opt/run-java/run-java.sh
 
 # Global S2I variable setup
 #source `dirname "$0"`/s2i-setup
