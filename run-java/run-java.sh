@@ -47,6 +47,10 @@
 
 # ==========================================================
 
+echo '************************************************************************'
+echo '* CUSTOM RUN JAVA (run-java.sh) FIS 2.0 SPRING BOOT on Openshift       *'
+echo '************************************************************************'
+
 # Fail on a single failed command in a pipeline (if supported)
 (set -o | grep -q pipefail) && set -o pipefail
 
