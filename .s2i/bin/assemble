@@ -5,15 +5,15 @@ echo '************************************************************************'
 echo '* CUSTOM S2I FIS 2.0 (2.0) SPRING BOOT configured from an Openshift    *'
 echo '************************************************************************'
 
-# SRCCONF=/tmp/src/configuration
+SRCRUNJAVA=/tmp/src/run-java
 # SRCLIB=/tmp/src/lib
 # SRCBIN=/tmp/src/bin
 # SRCPATCH=/tmp/src/patch
 
-# if [ -d ${SRCCONF} ]; then
-#  echo "Copying config files from project..."
-#  cp -v ${SRCCONF}/* $AMQ_HOME/conf/
-# fi
+ if [ -d ${SRCRUNJAVA} ]; then
+  echo " .... Copying RUN JAVA SHELL file from project ..."
+  cp -v ${SRCRUNJAVA}/* /opt/run-java/
+fi
 
 #!/bin/sh
 # Global S2I variable setup
