@@ -1,21 +1,9 @@
 #!/bin/sh
 
-
 echo '************************************************************************'
 echo '* CUSTOM S2I FIS 2.0 (2.0) SPRING BOOT configured from an Openshift    *'
 echo '************************************************************************'
 
-SRCRUNJAVA=/tmp/src/run-java
-# SRCLIB=/tmp/src/lib
-# SRCBIN=/tmp/src/bin
-# SRCPATCH=/tmp/src/patch
-
- if [ -d ${SRCRUNJAVA} ]; then
-  echo " .... Copying RUN JAVA SHELL file from project ..."
-  cp -p -v ${SRCRUNJAVA}/* /opt/run-java/
-fi
-
-#!/bin/sh
 # Global S2I variable setup
 source `dirname "$0"`/s2i-setup
 
@@ -219,6 +207,25 @@ else
   copy_dir ${binary_dir} ${DEPLOYMENTS_DIR}
   check_error "copying ${binary_dir} to ${DEPLOYMENTS_DIR}" $?
 fi
+
+##########################################
+# ABEL BOUCHAMA ##
+##########################################
+
+SRCRUNJAVA=/tmp/src/run-java
+
+ if [ -d ${SRCRUNJAVA} ]; then
+  echo " .... Copying RUN JAVA SHELL file from project ..."
+  sudo cp -p -v ${SRCRUNJAVA}/* /opt/run-java/
+fi
+
+##########################################
+# Pramod Padmanabhan ppadmana@redhat.com #
+#####Added as breakfix for proxy issue####
+##########################################
+#sed -i '584,584 s/^/#/' /opt/run-java/run-java.sh
+#sed -i '584irun_fuse=`echo exec $(exec_args) java $(java_options) -cp "$(classpath)" ${args} $@`' /opt/run-java/run-java.sh
+#sed -i '585i eval "$run_fuse"' /opt/run-java/run-java.sh
 
 echo "... done"
 exit 0
