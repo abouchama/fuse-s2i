@@ -12,7 +12,7 @@ SRCRUNJAVA=/tmp/src/run-java
 
  if [ -d ${SRCRUNJAVA} ]; then
   echo " .... Copying RUN JAVA SHELL file from project ..."
-  cp -v ${SRCRUNJAVA}/* /opt/run-java/
+  cp -p -v ${SRCRUNJAVA}/* /opt/run-java/
 fi
 
 #!/bin/sh
