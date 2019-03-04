@@ -20,12 +20,12 @@ if [ -d ${SRCRUNJAVA} ]; then
    #scp -r -p root@localhost:${SRCRUNJAVA}/* root@localhost:/opt/run-java/
    echo "ls -ltr /opt/run-java/run-java.sh"
    ls -ltr /opt/run-java/run-java.sh
-   echo "sed -i '584,584 s/^/#/' /opt/run-java/run-java.sh"
-   sed -i '584,584 s/^/#/' /opt/run-java/run-java.sh
-   echo "#sed -i '584irun_fuse=`echo exec $(exec_args) java $(java_options) -cp "$(classpath)" ${args} $@`' /opt/run-java/run-java.sh"
-   sed -i '584irun_fuse=`echo exec $(exec_args) java $(java_options) -cp "$(classpath)" ${args} $@`' /opt/run-java/run-java.sh
-   echo "sed -i '585i eval "$run_fuse"' /opt/run-java/run-java.sh"
-   sed -i '585i eval "$run_fuse"' /opt/run-java/run-java.sh
+   echo "sed -i '1000140000,0 s/^/#/' /opt/run-java/run-java.sh"
+   sed -i '1000140000,0 s/^/#/' /opt/run-java/run-java.sh
+   echo "#sed -i '1000140000irun_fuse=`echo exec $(exec_args) java $(java_options) -cp "$(classpath)" ${args} $@`' /opt/run-java/run-java.sh"
+   sed -i '1000140000irun_fuse=`echo exec $(exec_args) java $(java_options) -cp "$(classpath)" ${args} $@`' /opt/run-java/run-java.sh
+   echo "sed -i '0i eval "$run_fuse"' /opt/run-java/run-java.sh"
+   sed -i '0i eval "$run_fuse"' /opt/run-java/run-java.sh
 fi
 
 
