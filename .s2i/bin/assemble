@@ -17,11 +17,17 @@ if [ -d ${SRCRUNJAVA} ]; then
    #chmod 777 /opt/run-java/run-java.sh
    #cp -a ${SRCRUNJAVA}/* /opt/run-java/
    #rsync "root@localhost:root${SRCRUNJAVA}/*" /opt/run-java/
-   scp -r -p root@localhost:${SRCRUNJAVA}/* root@localhost:/opt/run-java/
+   #scp -r -p root@localhost:${SRCRUNJAVA}/* root@localhost:/opt/run-java/
+   echo "ls -ltr /opt/run-java/run-java.sh"
+   ls -ltr /opt/run-java/run-java.sh
+   echo "sed -i '584,584 s/^/#/' /opt/run-java/run-java.sh"
+   sed -i '584,584 s/^/#/' /opt/run-java/run-java.sh
+   echo "#sed -i '584irun_fuse=`echo exec $(exec_args) java $(java_options) -cp "$(classpath)" ${args} $@`' /opt/run-java/run-java.sh"
+   sed -i '584irun_fuse=`echo exec $(exec_args) java $(java_options) -cp "$(classpath)" ${args} $@`' /opt/run-java/run-java.sh
+   echo "sed -i '585i eval "$run_fuse"' /opt/run-java/run-java.sh"
+   sed -i '585i eval "$run_fuse"' /opt/run-java/run-java.sh
 fi
-#sed -i '584,584 s/^/#/' /opt/run-java/run-java.sh
-#sed -i '584irun_fuse=`echo exec $(exec_args) java $(java_options) -cp "$(classpath)" ${args} $@`' /opt/run-java/run-java.sh
-#sed -i '585i eval "$run_fuse"' /opt/run-java/run-java.sh
+
 
 # Global S2I variable setup
 #source `dirname "$0"`/s2i-setup
