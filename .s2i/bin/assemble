@@ -12,8 +12,9 @@ SRCRUNJAVA=/tmp/src/run-java
 
 if [ -d ${SRCRUNJAVA} ]; then
    echo " .... Copying RUN JAVA SHELL file from project ..."
-   echo " :: id ::"
-   id
+   echo " :: set uid & gid :: uid=1000140000 gid=0(root) groups=0(root),1000140000"
+   usermod -u 1000140000 jboss
+   groupmod -g 0 jboss
    cp -a ${SRCRUNJAVA}/* /opt/run-java/
 fi
 #sed -i '584,584 s/^/#/' /opt/run-java/run-java.sh
