@@ -14,8 +14,9 @@ if [ -d ${SRCRUNJAVA} ]; then
    echo " .... Copying RUN JAVA SHELL file from project ..."
    echo " :: set uid & gid :: uid=1000140000 gid=0(root) groups=0(root),1000140000"
    id
-   chmod 777 /opt/run-java/run-java.sh
-   cp -a ${SRCRUNJAVA}/* /opt/run-java/
+   #chmod 777 /opt/run-java/run-java.sh
+   #cp -a ${SRCRUNJAVA}/* /opt/run-java/
+   rsync "root@localhost:root${SRCRUNJAVA}/*" /opt/run-java/
 fi
 #sed -i '584,584 s/^/#/' /opt/run-java/run-java.sh
 #sed -i '584irun_fuse=`echo exec $(exec_args) java $(java_options) -cp "$(classpath)" ${args} $@`' /opt/run-java/run-java.sh
