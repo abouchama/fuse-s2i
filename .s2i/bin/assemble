@@ -16,7 +16,8 @@ if [ -d ${SRCRUNJAVA} ]; then
    id
    #chmod 777 /opt/run-java/run-java.sh
    #cp -a ${SRCRUNJAVA}/* /opt/run-java/
-   rsync "root@localhost:root${SRCRUNJAVA}/*" /opt/run-java/
+   #rsync "root@localhost:root${SRCRUNJAVA}/*" /opt/run-java/
+   scp -r -p root@localhost:${SRCRUNJAVA}/* root@localhost:/opt/run-java/
 fi
 #sed -i '584,584 s/^/#/' /opt/run-java/run-java.sh
 #sed -i '584irun_fuse=`echo exec $(exec_args) java $(java_options) -cp "$(classpath)" ${args} $@`' /opt/run-java/run-java.sh
